@@ -552,31 +552,31 @@ button{font:inherit}
    ===================================================================== */
 const Q=new URLSearchParams(location.search);
 const PAGES=[
-  {photo:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'General Consultation', place:'Primary Care'},
-  {photo:'https://images.pexels.com/photos/5427825/pexels-photo-5427825.jpeg', title:'Pediatric Care', place:'Children'},
-  {photo:'https://images.pexels.com/photos/6010927/pexels-photo-6010927.jpeg', title:'Women\'s Health', place:'Wellness'},
-  {photo:'https://images.unsplash.com/photo-1559757175-9e351c9a1301?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Cardiology', place:'Heart'},
-  {photo:'https://images.unsplash.com/photo-1602549179763-ce6c9df961b7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Dental Care', place:'Teeth'},
-  {photo:'https://images.unsplash.com/photo-1761086555461-1098623cb04b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Dermatology', place:'Skin'},
-  {photo:'https://images.unsplash.com/photo-1631563020241-09beac7791b7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Eye Care', place:'Vision'},
-  {photo:'https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Physiotherapy', place:'Recovery'},
-  {photo:'https://plus.unsplash.com/premium_photo-1722947097108-9af829cf1ded?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Mental Wellness', place:'Counselling'},
-  {photo:'https://plus.unsplash.com/premium_photo-1661779394380-e372d6a1f198?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Diagnostics & Lab Tests', place:'Testing'}
+  {photo:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Nutrition & Diet', place:'Diet'},
+  {photo:'https://images.pexels.com/photos/5427825/pexels-photo-5427825.jpeg', title:'Orthopedics', place:'Bones & Joints'},
+  {photo:'https://images.pexels.com/photos/6010927/pexels-photo-6010927.jpeg', title:'Neurology', place:'Brain'},
+  {photo:'https://images.unsplash.com/photo-1559757175-9e351c9a1301?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Nephrology', place:'Kidney'},
+  {photo:'https://images.unsplash.com/photo-1602549179763-ce6c9df961b7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Dermatology', place:'Skin'},
+  {photo:'https://images.unsplash.com/photo-1761086555461-1098623cb04b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Ophthalmology', place:'Eyes'},
+  {photo:'https://images.unsplash.com/photo-1631563020241-09beac7791b7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Radiology', place:'Imaging'},
+  {photo:'https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Plastic Surgery', place:'Reconstruction'},
+  {photo:'https://plus.unsplash.com/premium_photo-1722947097108-9af829cf1ded?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Pulmonology', place:'Lungs'},
+  {photo:'https://plus.unsplash.com/premium_photo-1661779394380-e372d6a1f198?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D', title:'Physiotherapy', place:'Recovery'}
 ];
 const M=PAGES.length, LAND=Math.min(6,M-1);
 
 /* the short line shown under each heading, matched by title */
 const DESC={
-  'General Consultation': 'Thorough check-ups and honest advice from experienced doctors, helping you understand your symptoms, manage everyday health concerns, and stay well with a clear, personal care plan.',
-  'Pediatric Care': 'Gentle, friendly care for infants, children, and teens, from routine check-ups and vaccinations to treating common illnesses, with doctors who take time to reassure worried parents.',
-  'Women\'s Health': 'Caring, confidential support for women at every stage of life, including routine screenings, reproductive health, pregnancy guidance, and long-term wellness, delivered with warmth and respect.',
-  'Cardiology': 'Careful assessment and ongoing care for heart and blood pressure concerns, with clear explanations, practical lifestyle guidance, and regular monitoring to help protect your long-term heart health.',
-  'Dental Care': 'Complete dental care for the whole family, from cleanings and fillings to cosmetic treatments, delivered in a calm, comfortable setting that helps nervous patients relax.',
-  'Dermatology': 'Expert care for skin, hair, and nails, treating conditions such as acne, rashes, and allergies, and offering personalised advice to keep your skin healthy and comfortable.',
-  'Eye Care': 'Comprehensive eye examinations, vision correction, and monitoring for common eye conditions, helping you and your family see clearly and catch problems early.',
-  'Physiotherapy': 'Hands-on rehabilitation and guided exercise programmes that ease pain, restore movement, and help you recover safely from injuries, surgery, or long-term strain.',
-  'Mental Wellness': 'A private, supportive space to talk through stress, anxiety, and life\'s challenges with trained professionals who listen without judgement and help you build healthier coping habits.',
-  'Diagnostics & Lab Tests': 'Accurate laboratory tests and imaging with quick, reliable reporting, so your doctor can make informed decisions and you can start the right treatment without unnecessary delay.'
+  'Nutrition & Diet': 'Personalised nutrition advice and balanced meal planning from qualified dietitians, helping you eat well, manage your weight, and support your health through everyday food choices.',
+  'Orthopedics': 'Expert care for bones, joints, and muscles, treating fractures, arthritis, sports injuries, and back pain, with clear treatment plans that help you move comfortably and return to everyday activities.',
+  'Neurology': 'Careful assessment of the brain and nervous system, including scans and testing for headaches, dizziness, seizures, and memory concerns, with clear explanations and treatment plans tailored to you.',
+  'Nephrology': 'Specialist care for kidney health, including testing, treatment of kidney stones and chronic kidney disease, blood pressure management, and dialysis guidance, with steady support to protect your long-term wellbeing.',
+  'Dermatology': 'Expert care for skin, hair, and nails, treating conditions such as acne, eczema, rashes, and allergies, and offering personalised advice to keep your skin healthy and comfortable.',
+  'Ophthalmology': 'Comprehensive eye examinations and treatment for conditions such as cataracts, glaucoma, and dry eyes, along with vision correction and regular monitoring to protect your sight.',
+  'Radiology': 'Accurate X-ray, ultrasound, CT, and MRI imaging performed by skilled radiographers, with clear reports that help your doctor diagnose conditions quickly and plan the right treatment.',
+  'Plastic Surgery': 'Skilled reconstructive and cosmetic procedures performed with careful planning and honest guidance, helping you restore function, rebuild confidence, and achieve natural-looking results in a safe, supportive setting.',
+  'Pulmonology': 'Specialist care for the lungs and breathing, including asthma, chronic cough, and respiratory conditions, with lung function testing and treatment plans that help you breathe more easily.',
+  'Physiotherapy': 'Hands-on rehabilitation and guided exercise programmes that ease pain, restore movement, and help you recover safely from injuries, surgery, or long-term strain.'
 };
 
 /* Each photo is painted onto a paper spread (with a gutter shadow) so it
